@@ -112,8 +112,9 @@
           <img src="img/browser.svg" alt="">
         </section>
         <section>
-          Dart как Typescript, только Google его забросил
-          и написал Angular на Typescript
+          <p>
+            Dart как Typescript, только Google его забросил
+          </p>
         </section>
         <section>
           История
@@ -137,7 +138,7 @@
             <li class="fragment highlight-current-blue">Delightful, flexible tooling</li>
           </ul>
         </section >
-        <section data-transition="convex">
+        <section data-transition="slide none">
           <p>Typescript</p>
           <pre><code data-trim>
 function greeter(person: string) {
@@ -149,7 +150,7 @@ let user = "Jane User";
 document.body.innerHTML = greeter(user);
           </code></pre>
         </section>
-        <section data-transition="convex">
+        <section data-transition="none">
           <p>Javascript</p>
           <pre><code data-trim>
 function greeter(person) {
@@ -162,7 +163,7 @@ document.body.innerHTML = greeter(user);
 
           </code></pre>
         </section>
-        <section>
+        <section data-transition="none slide">
           <p>Typescript</p>
           <pre><code data-trim data-noescape>
 function greeter(person<mark>: string</mark>) {
@@ -172,21 +173,6 @@ function greeter(person<mark>: string</mark>) {
 let user = "Jane User";
 
 document.body.innerHTML = greeter(user);
-          </code></pre>
-        </section>
-        <section data-transition="slide none">
-          <p>Dart</p>
-          <pre><code data-trim style="font-size: .9em">
-import 'dart:html';
-
-void main() {
-  var user = "Jane User";
-  document.body.innerHtml = greeter(user);
-}
-
-String greeter(String person){
-  return "Hello, " + person;
-}
           </code></pre>
         </section>
         <section data-transition="none">
@@ -518,6 +504,9 @@ import 'dart:html';
         </section>
         <section>
           Размер имеет значение
+        </section>
+        <section>
+          <img src="img/size.jpeg" alt="">
         </section>
         <section>
           <pre><code data-trim style="font-size: .9em">
