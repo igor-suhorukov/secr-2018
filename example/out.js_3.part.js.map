@@ -1,0 +1,9 @@
+{
+  "version": 3,
+  "engine": "v2",
+  "file": "out.js_3.part.js",
+  "sourceRoot": "",
+  "sources": ["org-dartlang-sdk:///sdk/lib/_internal/js_runtime/lib/js_primitives.dart","org-dartlang-sdk:///sdk/lib/core/print.dart","org-dartlang-sdk:///sdk/lib/_internal/js_runtime/lib/internal_patch.dart"],
+  "names": ["printString","print","printToConsole"],
+  "mappings": "A;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;GAmBKA,YACHA;AAGEA,MAyBJA,CArBEA;AAGEA,MAkBJA,CAdEA,2BACEA,MAaJA;AATEA;AAEEA,MAOJA,4C;GCzCKC,YC8BHC,KD7BgBD,OAMlBA,C"
+}

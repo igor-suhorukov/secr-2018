@@ -1,0 +1,933 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+    <title>reveal.js</title>
+
+    <link rel="stylesheet" href="css/reveal.css">
+    <link rel="stylesheet" href="css/theme/wrike.css">
+
+    <!-- Theme used for syntax highlighting of code -->
+    <link rel="stylesheet" href="lib/css/zenburn.css">
+
+    <!-- Printing and PDF exports -->
+    <script>
+      var link = document.createElement( 'link' );
+      link.rel = 'stylesheet';
+      link.type = 'text/css';
+      link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+      document.getElementsByTagName( 'head' )[0].appendChild( link );
+    </script>
+    <style>
+.reveal .solid {
+  width: 2ex;
+  display:inline-block;
+  text-align:center;
+  font-weight: 400;
+}
+      .reveal li {
+        margin-bottom: .3em;
+      }
+      .reveal pre.opacity * {
+        color: rgba(255,255,255, 0.3) !important;
+      }
+      .reveal .tag {
+        width: 12ex;
+        display:inline-block;
+        float: left;
+        font-weight:500;
+      }
+
+      .reveal pre.opacity mark,
+      .reveal pre.opacity mark * {
+        color: rgba(255,255,255, 1) !important;
+        background-color:transparent;
+      }
+
+      .reveal .slides section .fragment.mark {
+        opacity: 1;
+        visibility: visible;
+      }
+      .reveal .slides section .fragment.mark.current-fragment,
+      .reveal .slides section .fragment.mark.current-fragment *,
+      .reveal mark,
+      .reveal mark * {
+        color: #fff!important;
+        background-color: #000!important;
+      }
+
+      .reveal ul.solid-ul li {
+        list-style:none;
+      }
+
+      .hidden {
+        visibility:hidden;
+      }
+    </style>
+
+  </head>
+  <body>
+    <div class="reveal">
+      <div class="slides">
+        <section>
+          <h2>
+            <img style="width: 1em; display: inline-block; vertial-align: middle" src="img/logo.svg" alt="">
+            Dart
+            <br>
+          </h2>
+          <p>Один язык &mdash; все платформы</p>
+          <p style="font-size: .6em">Алексей Золотых, Wrike</p>
+        </section>
+        <section>
+          <img src="img/wrike.png" alt="">
+        </section>
+        <section>
+          <p>Что есть Dart?</p>
+          <ul>
+            <li class="fragment">Dart -&gt; что-то еще</li>
+            <li class="fragment">DartVM</li>
+          </ul>
+        </section>
+        <section style="font-size: 0.6em">
+          <h3>Что есть все платформы?</h3>
+          <p>
+          Браузеры
+          </p>
+          <img src="img/browser.svg" alt="">
+          <div class="fragment">
+            <p>Сервер</p>
+            <img src="img/server.svg" alt="">
+          </div>
+          <div class="fragment fade-up">
+            <p>Мобильные устройства</p>
+            <img src="img/mobile.svg" alt="">
+          </div>
+        </section>
+        <section style="font-size: 0.6em">
+          <p>
+          Браузеры
+          </p>
+          <img src="img/browser.svg" alt="">
+        </section>
+        <section>
+          Dart как Typescript, только Google его забросил
+          и написал Angular на Typescript
+        </section>
+        <section>
+          История
+        </section>
+        <section>
+          <img src="img/typescript.png" alt="">
+        </section>
+        <section>
+          TypeScript is a typed superset of JavaScript that compiles to plain JavaScript.
+        </section>
+        <section>
+          <img src="img/dart.png" alt="">
+        </section>
+        <section>
+          <p>
+          Dart helps you craft beautiful, high-quality experiences across all screens, with:
+          </p>
+          <ul>
+            <li class="fragment highlight-current-blue">A client-optimized language</li>
+            <li class="fragment highlight-current-blue">Rich, powerful frameworks</li>
+            <li class="fragment highlight-current-blue">Delightful, flexible tooling</li>
+          </ul>
+        </section >
+        <section data-transition="convex">
+          <p>Typescript</p>
+          <pre><code data-trim>
+function greeter(person: string) {
+    return "Hello, " + person;
+}
+
+let user = "Jane User";
+
+document.body.innerHTML = greeter(user);
+          </code></pre>
+        </section>
+        <section data-transition="convex">
+          <p>Javascript</p>
+          <pre><code data-trim>
+function greeter(person) {
+    return "Hello, " + person;
+}
+
+let user = "Jane User";
+
+document.body.innerHTML = greeter(user);
+
+          </code></pre>
+        </section>
+        <section>
+          <p>Typescript</p>
+          <pre><code data-trim data-noescape>
+function greeter(person<mark>: string</mark>) {
+    return "Hello, " + person;
+}
+
+let user = "Jane User";
+
+document.body.innerHTML = greeter(user);
+          </code></pre>
+        </section>
+        <section data-transition="slide none">
+          <p>Dart</p>
+          <pre><code data-trim style="font-size: .9em">
+import 'dart:html';
+
+void main() {
+  var user = "Jane User";
+  document.body.innerHtml = greeter(user);
+}
+
+String greeter(String person){
+  return "Hello, " + person;
+}
+          </code></pre>
+        </section>
+        <section data-transition="none">
+          <p>Dart</p>
+          <pre><code data-trim  data-noescape style="font-size: .9em">
+<span class="fragment mark" data-fragment-index="3">import 'dart:html';</span>
+
+void main() {
+  var user = "Jane User";
+  document.body.innerHtml = greeter(user);
+}
+
+<span  class="fragment mark" data-fragment-index="1"><span data-fragment-index="2" class="fragment fade-out">String greeter(String person){
+  return "Hello, " + person;
+}<span></span></code></pre>
+        </section>
+        <section>
+          SDK
+        </section>
+        <section>
+          <ul style="font-size: .8em; columns: 2; -webkit-columns: 2; -moz-columns: 2; list-style: none"> 
+            <li>dart:async</li>
+            <li>dart:collection</li>
+            <li>dart:convert</li>
+            <li>dart:core</li>
+            <li>dart:developer</li>
+            <li>dart:html</li>
+            <li>dart:indexed_db</li>
+            <li>dart:js</li>
+            <li>dart:js_util</li>
+            <li>dart:math</li>
+            <li>dart:svg</li>
+            <li>dart:typed_data</li>
+            <li>dart:web_audio</li>
+            <li>dart:web_gl</li>
+            <li>dart:web_sql</li>
+            <li>dart:cli</li>
+            <li>dart:io</li>
+            <li>dart:isolate</li>
+            <li>dart:mirrors</li>
+          </ul>
+        </section>
+        <section>
+          <p>dart:core</p>
+        </section>
+        <section data-transition="slide none">
+          <pre><code>import 'dart:core'</code></pre>
+        </section>
+        <section data-transition="slide none">
+          <pre><code data-noescape data-trim>
+          <strike>import 'dart:core'</strike>
+          </code></pre>
+        </section>
+        <section data-transition="slide none">
+          <pre><code data-trim>
+void main(){
+  final date = DateTime.now();
+  final berlinWallFell = new DateTime(1989, 11, 9);
+  final Duration diff = date.difference(berlinWallFell);
+  print('${diff.inDays} days');
+}
+          </code></pre>
+        </section>
+        <section data-transition="none">
+          <pre><code data-trim data-noescape>
+void main(){
+  final date = DateTime.now();
+  final berlinWallFell = new DateTime(1989, 11, 9);
+  final <mark>Duration</mark> diff = date.difference(berlinWallFell);
+  print('${diff.inDays} days');
+}
+          </code></pre>
+        </section>
+        <section data-transition="none">
+          <pre><code data-trim>
+void main(){
+  final date = DateTime.now();
+  final berlinWallFell = new DateTime(1989, 11, 9);
+  final diff = date.difference(berlinWallFell);
+  print('${diff.inDays} days');
+}
+          </code></pre>
+        </section>
+        <section data-transition="none">
+          <pre><code data-trim data-noescape>
+void main(){
+  final date = DateTime.now();
+  final berlinWallFell = new DateTime(1989, 11, 9);
+  final diff = date.difference(berlinWallFell);
+  print(<mark>'${diff.inDays} days'</mark>);
+}
+          </code></pre>
+        </section>
+        <section>
+          Субъективно удобнее
+        </section>
+        <section data-transition="slide none">
+          <pre><code data-trim>
+class Hello {
+  String foo;
+}
+          </code></pre>
+        </section>
+        <section data-transition="none">
+          <pre><code data-trim data-noescape>
+class Hello {
+  String _foo;
+}
+          </code></pre>
+        </section>
+        <section data-transition="none">
+          <pre><code data-trim data-noescape>
+class Hello {
+  String <mark>_</mark>foo;
+}
+          </code></pre>
+        </section>
+        <section data-transition="none">
+          <pre><code data-trim data-noescape>
+class Hello {
+  final String _foo;
+  Hello(String  input){
+    _foo = input;
+  }
+}
+          </code></pre>
+        </section>
+        <section data-transition="none">
+          <pre><code data-trim data-noescape>
+class Hello {
+  final String _foo;
+  Hello(this._foo);
+}
+          </code></pre>
+        </section>
+        <section data-transition="slide none">
+          <pre><code data-trim>
+          new Hello();
+          </code></pre>
+        </section>
+        <section data-transition="none">
+          <pre><code data-trim data-noescape>
+          <strike>new</strike> Hello();
+          </code></pre>
+        </section>
+        <section data-transition="none">
+          <pre><code data-trim data-noescape>
+          Hello();
+          </code></pre>
+        </section>
+        <section data-transition="slide none">
+          <p>Future вместо Promise</p>
+          <pre><code style="font-size: 1.6rem" data-trim data-noescape>
+import 'dart:async';
+
+Future&lt;void&gt; main() async {
+  print(await asyncOperation());
+}
+<span class="fragment">
+Future&lt;String&gt; asyncOperation() =&gt; 
+  Future.delayed(
+    Duration(seconds: 1), 
+    () =&gt; 'hello',
+  );
+</span>
+          </code></pre>
+        </section>
+        <section data-transition="none">
+          <p>Future вместо Promise</p>
+          <pre><code style="font-size: 1.6rem" data-trim data-noescape>
+<mark>import 'dart:async'</mark>;
+
+Future&lt;void&gt; main() async {
+  print(await asyncOperation());
+}
+<span class="">
+Future&lt;String&gt; asyncOperation() =&gt; 
+  Future.delayed(
+    Duration(seconds: 1), 
+    () =&gt; 'hello',
+  );
+</span>
+          </code></pre>
+        </section>
+        <section>
+          <p>FutureOr</p>
+          <pre><code class="fragment" data-trim  data-noescape>
+import 'dart:async';
+
+FutureOr&lt;String&gt; foo() =&gt; 'hello';
+<span class="fragment">
+Future&lt;void&gt; main() async {
+  print(await foo());
+}
+</span>
+          </code></pre>
+        </section>
+        <section>
+           Streams
+        </section>
+        <section>
+          <p>Пока еще не Stream</p>
+          <pre><code data-trim data-noescape><span class="fragment">Iterable&lt;int&gt; getList() sync* {
+  yield 1;
+  yield 2;
+}</span>
+
+<span class="fragment">void main(){
+  print(getList().join('\n'));
+}</span>
+
+          </code></pre>
+        </section>
+        <section>
+          <p>Уже Stream</p>
+          <pre><code data-trim data-noescape>
+Stream&lt;int&gt; getList() async* {
+  await 1;
+  await 2;
+}
+<span class="fragment">...
+final stream = getList();
+stream.listen((int i) => /* do something */);
+...
+</span>
+          </code></pre>
+        </section>
+        <section>
+          <pre><code data-trim>
+          //...
+          final controller = new StreamController&lt;String&gt;();
+          controller.stream.listen(print);
+          controller.add('hello');
+          //...
+          </code></pre>
+        </section>
+        <section>
+          <p>&mdash; Ничего не напоминает?</p>
+          <p class="fragment">&mdash; RxJS</p>
+        </section>
+        <section>
+          <pre ><code style="font-size: .9em" data-trim>
+@Component(
+  selector: 'hero-search',
+)
+class HeroSearchComponent {
+  ...
+  Stream&lt;List&lt;Hero&gt;&gt; heroes;
+  StreamController&lt;String&gt; _searchTerms = StreamController&lt;String&gt;.broadcast();
+  ...
+}
+          </code></pre>
+        </section>
+        <section>
+          Весь мир обновляется сразу
+        </section>
+        <section>
+          Коллекции
+          <pre class="fragment"><code data-trim>
+          import 'dart:collection'
+          </code></pre>
+        </section>
+        <section data-transition="slide none">
+          <p>Пока еще не Stream</p>
+          <pre><code data-trim data-noescape><span>Iterable&lt;int&gt; getList() sync* {
+  yield 1;
+  yield 2;
+}</span>
+
+<span>void main(){
+  print(getList().join('\n'));
+}</span>
+
+          </code></pre>
+        </section>
+        <section data-transition="none slide">
+          <p>Пока еще не Stream</p>
+          <pre><code data-trim data-noescape><span><mark>Iterable&lt;int&gt;</mark> getList() sync* {
+  yield 1;
+  yield 2;
+}</span>
+
+<span>void main(){
+  print(getList().join('\n'));
+}</span>
+
+          </code></pre>
+        </section>
+        <section>
+          <img src="img/console2.png" alt="">
+        </section>
+        <section>
+          <h3>В стандартной библиотеке</h3>
+          <p class="fragment">
+            Iterable, Map, Set, List
+          </p>
+          <h3 class="fragment">В dart:collection</h3>
+          <p class="fragment" style="font-size: 0.6em">
+DoubleLinkedQueue DoubleLinkedQueueEntry HashMap HashSet HasNextIterator IterableBase IterableMixin LinkedHashMap LinkedHashSet LinkedList LinkedListEntry ListBase ListMixin ListQueue MapBase MapMixin MapView Queue SetBase SetMixin SplayTreeMap SplayTreeSet UnmodifiableListView UnmodifiableMapBase UnmodifiableMapView
+          </p>
+        </section>
+        <section data-transition="slide none">
+          <p>Dart</p>
+          <pre><code data-trim  data-noescape style="font-size: .9em">
+<mark>import 'dart:html';</mark>
+
+void main() {
+  var user = "Jane User";
+  document.body.innerHtml = greeter(user);
+}
+
+<span  class="hidden" data-fragment-index="1"><span class="hide">String greeter(String person){
+  return "Hello, " + person;
+}<span></span></code></pre>
+        </section>
+        <section data-transition="none">
+          <p>Dart</p>
+          <pre><code data-trim  data-noescape style="font-size: .9em">
+import 'dart:html';
+
+<mark>void main() {</mark>
+  var user = "Jane User";
+  document.body.innerHtml = greeter(user);
+}
+
+<span  class="hidden" data-fragment-index="1"><span class="hide">String greeter(String person){
+  return "Hello, " + person;
+}<span></span></code></pre>
+        </section>
+        <section>
+          Размер имеет значение
+        </section>
+        <section>
+          <pre><code data-trim style="font-size: .9em">
+class Car {
+  final Button button;
+  Car(this.button);
+}
+
+abstract class Button {
+  void push();
+}
+
+class EmergencyButton implements Button {
+  void push()=&gt; print('push');
+}
+          </code></pre>
+        </section>
+        <section>
+          <p>Помигать аварийкой</p>
+          <pre><code data-trim>
+Future main() async {
+  final car = Car(EmergencyButton());
+  car.button.push();
+}
+          </code></pre>
+        </section>
+        <section>
+          <p>Компилируем</p>
+          <p class="fragment">И получаем... <span class="fragment">8k в выходном файле</span></p>
+        </section>
+        <section>
+          <pre><code style=".5em" data-trim>
+(function(){var supportsDirectProtoAccess=function(){var z=function(){}
+z.prototype={p:{}}
+var y=new z()
+if(!(y.__proto__&amp;&amp;y.__proto__.p===z.prototype.p))return false
+try{if(typeof navigator!=&quot;undefined&quot;&amp;&amp;typeof navigator.userAgent==&quot;string&quot;&amp;&amp;navigator.userAgent.indexOf(&quot;Chrome/&quot;)&gt;=0)return true
+if(typeof version==&quot;function&quot;&amp;&amp;version.length==0){var x=version()
+if(/^\d+\.\d+\.\d+\.\d+$/.test(x))return true}}catch(w){}return false}()
+function map(a){a=Object.create(null)
+a.x=0
+delete a.x
+return a}var A=map()
+var B=map()
+var C=map()
+var D=map()
+var E=map()
+var F=map()
+var G=map()
+var H=map()
+var J=map()
+var K=map()
+var L=map()
+var M=map()
+var N=map()
+var O=map()
+var P=map()
+var Q=map()
+var R=map()
+var S=map()
+var T=map()
+var U=map()
+var V=map()
+var W=map()
+var X=map()
+var Y=map()
+var Z=map()
+function I(){}init()
+function setupProgram(a,b,c){&quot;use strict&quot;
+function processStatics(a3,a4){var h=Object.keys(a3)
+for(var g=0;g&lt;h.length;g++){var f=h[g]
+if(f===&quot;^&quot;)continue
+var e=a3[f]
+var d=f.charCodeAt(0)
+var a0
+if(d===43){w[a0]=f.substring(1)
+var a1=a3[f]
+if(a1&gt;0)a3[a0].$reflectable=a1
+if(e&amp;&amp;e.length)init.typeInformation[a0]=e}else if(d===42){n[a0].$D=e
+var a2=a3.$methodsWithOptionalArguments
+if(!a2)a3.$methodsWithOptionalArguments=a2={}
+a2[f]=a0}else if(typeof e===&quot;function&quot;){n[a0=f]=e
+i.push(f)}else if(e.constructor===Array){}else{}}}var z=0
+if(!init.libraries)init.libraries=[]
+if(!init.mangledNames)init.mangledNames=map()
+if(!init.mangledGlobalNames)init.mangledGlobalNames=map()
+if(!init.statics)init.statics=map()
+if(!init.typeInformation)init.typeInformation=map()
+var y=init.libraries
+var x=init.mangledNames
+var w=init.mangledGlobalNames
+var v=Object.prototype.hasOwnProperty
+var u=a.length
+var t=map()
+t.collected=map()
+t.pending=map()
+t.constructorsList=[]
+t.combinedConstructorFunction=&quot;function $reflectable(fn){fn.$reflectable=1;return fn};\n&quot;+&quot;var $desc;\n&quot;
+for(var s=0;s&lt;u;s++){var r=a[s]
+var q=r[0]
+var p=r[1]
+var o=r[2]
+var n=r[3]
+var m=r[4]
+var l=!!r[5]
+var k=m&amp;&amp;m[&quot;^&quot;]
+if(k instanceof Array)k=k[0]
+var j=[]
+var i=[]
+processStatics(m,t)
+y.push([q,p,j,i,o,k,l,n])}}I.a=function(){}
+var dart=[[&quot;&quot;,&quot;&quot;,,H,{&quot;^&quot;:&quot;&quot;,
+c:function(a){if(typeof dartPrint==&quot;function&quot;){dartPrint(a)
+return}if(typeof console==&quot;object&quot;&amp;&amp;typeof console.log!=&quot;undefined&quot;){console.log(a)
+return}if(typeof window==&quot;object&quot;)return
+if(typeof print==&quot;function&quot;){print(a)
+return}throw&quot;Unable to print message: &quot;+String(a)}}],[&quot;&quot;,&quot;&quot;,,E,{&quot;^&quot;:&quot;&quot;,
+b:function(){H.c(&quot;push&quot;)}},1]]
+setupProgram(dart,0,0)
+var $=I.p
+$=null
+init.isHunkLoaded=function(a){return!!$dart_deferred_initializers$[a]}
+init.deferredInitialized=new Object(null)
+init.isHunkInitialized=function(a){return init.deferredInitialized[a]}
+init.initializeLoadedHunk=function(a){var z=$dart_deferred_initializers$[a]
+if(z==null)throw&quot;DeferredLoading state error: code with hash '&quot;+a+&quot;' was not loaded&quot;
+z($globals$,$)
+init.deferredInitialized[a]=true}
+init.deferredLibraryParts={}
+init.deferredPartUris=[]
+init.deferredPartHashes=[]
+I=I.$finishIsolateConstructor(I)
+$=new I()
+init.metadata=[]
+init.types=[]
+function convertToFastObject(a){function MyClass(){}MyClass.prototype=a
+new MyClass()
+return a}function convertToSlowObject(a){a.__MAGIC_SLOW_PROPERTY=1
+delete a.__MAGIC_SLOW_PROPERTY
+return a}A=convertToFastObject(A)
+B=convertToFastObject(B)
+C=convertToFastObject(C)
+D=convertToFastObject(D)
+E=convertToFastObject(E)
+F=convertToFastObject(F)
+G=convertToFastObject(G)
+H=convertToFastObject(H)
+J=convertToFastObject(J)
+K=convertToFastObject(K)
+L=convertToFastObject(L)
+M=convertToFastObject(M)
+N=convertToFastObject(N)
+O=convertToFastObject(O)
+P=convertToFastObject(P)
+Q=convertToFastObject(Q)
+R=convertToFastObject(R)
+S=convertToFastObject(S)
+T=convertToFastObject(T)
+U=convertToFastObject(U)
+V=convertToFastObject(V)
+W=convertToFastObject(W)
+X=convertToFastObject(X)
+Y=convertToFastObject(Y)
+Z=convertToFastObject(Z)
+function init(){I.p=Object.create(null)
+init.allClasses=map()
+init.getTypeFromName=function(a){return init.allClasses[a]}
+init.interceptorsByTag=map()
+init.leafTags=map()
+init.finishedClasses=map()
+I.$finishIsolateConstructor=function(a){var z=a.p
+function Isolate(){var y=Object.keys(z)
+for(var x=0;x&lt;y.length;x++){var w=y[x]
+this[w]=z[w]}var v=init.lazies
+var u=v?Object.keys(v):[]
+for(var x=0;x&lt;u.length;x++)this[v[u[x]]]=null
+function ForceEfficientMap(){}ForceEfficientMap.prototype=this
+new ForceEfficientMap()
+for(var x=0;x&lt;u.length;x++){var t=v[u[x]]
+this[t]=z[t]}}Isolate.prototype=a.prototype
+Isolate.prototype.constructor=Isolate
+Isolate.p=z
+Isolate.a=a.a
+return Isolate}}(function(a){if(typeof document===&quot;undefined&quot;){a(null)
+return}if(typeof document.currentScript!='undefined'){a(document.currentScript)
+return}var z=document.scripts
+function onLoad(b){for(var x=0;x&lt;z.length;++x)z[x].removeEventListener(&quot;load&quot;,onLoad,false)
+a(b.target)}for(var y=0;y&lt;z.length;++y)z[y].addEventListener(&quot;load&quot;,onLoad,false)})(function(a){init.currentScript=a
+if(typeof dartMainRunner===&quot;function&quot;)dartMainRunner(E.b,[])
+else E.b([])})})()
+//# sourceMappingURL=out.js.map
+          erer
+          </code></pre>
+        </section>
+        <section>
+          <p>Typescript</p>
+          <pre><code data-trim style="font-size: .7em">
+class Car {
+    constructor(public button: Button) { }
+}
+
+interface Button { push():void; }
+
+class EmergencyButton implements Button {
+    push() { console.log('push') };
+}
+
+const car = new Car(new EmergencyButton());
+car.button.push();
+          </code></pre>
+        </section>
+        <section>
+          <pre><code style="font-size: .7em" data-trim>
+var Car = /** @class */ (function () {
+    function Car(button) { this.button = button; }
+    return Car;
+}());
+var EmergencyButton = /** @class */ (function () {
+    function EmergencyButton() {
+    }
+    EmergencyButton.prototype.push = function () { console.log('push'); };
+    ;
+    return EmergencyButton;
+}());
+var car = new Car(new EmergencyButton());
+car.button.push();
+          </code></pre>
+        </section>
+        <section>
+          <pre><code data-trim>
+...
+H.c("push")
+...
+          </code></pre>
+          <p>+</p>
+          <p>SDK</p>
+          <p>+</p>
+          <p>Runtime</p>
+        </section>
+        <section>
+          <pre><code data-trim>
+import 'package:example/bar.dart' deferred as bar;
+
+Future&lt;void&gt; foo() async {
+  await bar.loadLibrary();
+  bar.bar();
+}
+          </code></pre>
+        </section>
+        <section>
+          <p>Dart2js знает куда положить ваш код</p>
+          <ul>
+            <li>60K	out.js</li>
+            <li>4.0K	out.js_1.part.js</li>
+            <li>4.0K	out.js_2.part.js</li>
+            <li>4.0K	out.js_3.part.js</li>
+          </ul>
+        </section>
+        <section>
+          Dart не подходит легковесным приложениям
+        </section>
+        <section>
+          <p>
+            Фреймворки
+          </p>
+          <ul>
+            <li>Angular 2+</li>
+            <li>React</li>
+            <li>Vue</li>
+          </ul>
+        </section>
+        <section>
+          Dart на сервере
+        </section>
+        <section>
+          <p>
+            Node vs Dart
+          </p>
+        </section>
+        <section>
+          Практически полный паритет в скорости
+          <a href="http://tiny.cc/dartvsnode">tiny.cc/dartvsnode</a>
+        </section>
+        <section>
+          <p>
+            Dart можно скомпилировать для Node
+            <a href="https://pub.dartlang.org/packages/node_interop/versions/1.0.0-dev.11.0">node_interop</a>
+          </p>
+        </section>
+        <section>
+          <p>
+            Завезли немного параллельности
+          </p>
+          <pre class="fragment"><code data-trim>
+Isolate.spawnUri(Uri.parse('isolate.dart'), [], null)
+          </code></pre>
+          <br />
+          <pre class="fragment"><code data-trim>
+library isolate;
+ 
+void main() {
+  print('isolate.main()');
+  while(true);
+}
+          </code></pre>
+        </section>
+        <section>
+          <p>Потеря контекста</p>
+           <img src="img/stack.png" alt="">
+        </section>
+        <section>
+          <p>Доклад Алексея Охрименко</p>
+          <a href="https://www.youtube.com/watch?v=Lrs6puJ4G2Q">www.youtube.com/watch?v=Lrs6puJ4G2Q</a>
+          <p>
+            Моя статья на Habr
+          </p>
+          <a href="https://habr.com/company/wrike/blog/302896/">habr.com/company/wrike/blog/302896/</a>
+        </section>
+        <section>
+          <img src="img/zone1.png" alt="">
+        </section>
+        <section>
+          <img src="img/zone2.png" alt="">
+        </section>
+        <section>
+          <p>
+            Зоны
+          </p>
+          <pre><code data-trim>
+runZoned(() {
+  Timer.run(() { throw 'Would normally kill the program'; });
+}, onError: (error, stackTrace) {
+  print('Uncaught error: $error');
+});
+          </code></pre>
+          <p>
+          <a href="https://habr.com/company/wrike/blog/310422/">https://habr.com/company/wrike/blog/310422/</a>
+          </p>
+        </section>
+        <section>
+          Мобильные устройства
+          <p>iOS + Android</p>
+        </section>
+        <section>
+          Flutter
+        </section>
+        <section>
+          <img src="img/fluttersheme.png" alt="">
+        </section>
+        <section>
+          <img src="img/flutter.gif" alt="">
+        </section>
+        <section>
+          <img src="img/flutter2.gif" alt="">
+          <p>
+            <a href="https://github.com/bluemix/tourism-demo">https://github.com/bluemix/tourism-demo</a>
+          </p>
+        </section>
+        <section>
+          <p>
+            Desktop
+          </p>
+          <a href="https://github.com/google/flutter-desktop-embedding">https://github.com/google/flutter-desktop-embedding</a>
+        </section>
+        <section>
+          <p>
+            Dart используется
+          </p>
+          <ul>
+            <li class="fragment">Frontend</li>
+            <li class="fragment">Server</li>
+            <li class="fragment">Desktop</li>
+            <li class="fragment">Mobile</li>
+          </ul>
+          <p class="fragment">
+            Dart &mdash; самодостаточный язык
+          </p>
+        </section>
+        <section>
+          <p>
+            Спасибо!
+          </p>
+          <p>Алексей Золотых</p>
+          <p>twitter: @zolotyh</p>
+          <p>e-mail: aazolotyh@gmail.com</p>
+        </section>
+      </div>
+    </div>
+
+    <script src="lib/js/head.min.js"></script>
+    <script src="js/reveal.js"></script>
+
+    <script>
+      // More info about config & dependencies:
+      // - https://github.com/hakimel/reveal.js#configuration
+      // - https://github.com/hakimel/reveal.js#dependencies
+      Reveal.initialize({
+        controls: true,
+        width: 1280,
+        height: 1024,
+        progress: true,
+        slideNumber: true,
+        history: true,
+        dependencies: [
+          { src: 'plugin/markdown/marked.js' },
+          { src: 'plugin/markdown/markdown.js' },
+          { src: 'plugin/notes/notes.js', async: true },
+          { src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
+        ]
+      });
+    </script>
+  </body>
+</html>

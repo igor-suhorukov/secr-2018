@@ -1,0 +1,9 @@
+{
+  "version": 3,
+  "engine": "v2",
+  "file": "out.js_2.part.js",
+  "sourceRoot": "",
+  "sources": ["org-dartlang-sdk:///sdk/lib/_internal/js_runtime/lib/collection_patch.dart","lib/bar.dart"],
+  "names": ["_HashSet","HashSet","_HashSet.iterator","_HashSetIterator","_HashSet.length","_HashSet.add","_HashSet._add","_HashSet._setTableEntry","_HashSet.addAll","_HashSet._computeElements","_HashSet._addHashTableEntry","_HashSet._computeHashCode","_HashSet._findBucketIndex","_HashSet._newHashTable","_HashSetIterator.current","_HashSetIterator.moveNext","bar"],
+  "mappings": "A;;;;;;;;;;;;;;;;;;;;;;;;;;;;;AAs1BEA;GAxDQC,kBAOAA,sBAqBRA,C;;GAkCgBC,YACdA,OAgUFC,cAhUuCD,qBACvCA,C;GAEQE,YAAUA,aAAOA,C;EAwCpBC,cACHA;AAAqBA;AAArBA,yCACgBA;AACdA,YAA0CA;AAArBA,SACrBA,OAAOA,WAQXA,MAPSA,2CACMA;AACXA,YAAiCA;AAAfA,SAClBA,OAAOA,WAIXA,MAFIA,OAAOA,SAEXA,C;EAEKC,YACCA;AAEwBA;AAFjBA;AACXA,YAAiCA;AAAfA,SACPA;AAEPA;AAAJA,WAsJmCC;KAnJrBD,kBACIA,QAMpBA;;AAFEA;AACAA,QACFA,C;GAEKE,cACHA;AAAeA;AAAfA,gBACEA,cAEJA,C;GAmCKC,WACHA;AAAIA;AAAJA,WAAuBA,QA+CzBA;AA9CoBA;;AAIJA;AACdA,YAEsCA;;AACpCA,qBAEwCA,UACtCA;AAKOA;AACXA,YAEsCA;;AACpCA,iBAIwCA,WACtCA,KAKOA;AACXA,YAEsCA;;AACpCA,iBAGqCA;;AACnCA,2BAEEA,MAKCA;AAAPA,QACFA,C;EAEKC,cACuBA;AAA1BA,cAAoCA,QAKtCA;AA2CqCH;AA7CnCG;AACAA,QACFA,C;EAyBIC,YAKFA,OAA0CA,iBAC5CA,C;EAwBIC,cACFA;WAAoBA,QAMtBA;;AAJEA,gBACMA,gBAAyCA,QAGjDA;AADEA,QACFA,C;;GAEOC,WAQUA;;;AAEfA,QACFA,C;;GA8EMC,WAAWA,aAAQA,C;EAEpBC,WACCA;AAAWA;AACFA;AACuBA;AAApCA,WACEA,UAAUA;KACLA,gBACLA;AACAA,QASJA,MAPIA;AAIAA;AACAA,QAEJA,E;GC/qCGC,WACHA;AACUA;AAASA;AAAnBA,OACFA,C"
+}
